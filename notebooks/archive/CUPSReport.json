@@ -1,0 +1,300 @@
+{
+	"Id": "CUPS",
+	"Name": "Compute Utilization Per Second  (CUPS) Metric Report Definition",
+	"ReportSequence": "51095",
+	"MetricValues": [{
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:54:24-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		},
+		{
+			"MetricId": "IOUsage",
+			"Timestamp": "2020-04-03T10:54:24-05:00",
+			"MetricValue": "0",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS IOUsage"
+				}
+			}
+		},
+		{
+			"MetricId": "MemoryUsage",
+			"Timestamp": "2020-04-03T10:54:24-05:00",
+			"MetricValue": "12",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS MemoryUsage"
+				}
+			}
+		}, {
+			"MetricId": "SystemUsage",
+			"Timestamp": "2020-04-03T10:54:24-05:00",
+			"MetricValue": "21",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS SystemUsage"
+				}
+			}
+		}, {
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:53:29-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		}, {
+			"MetricId": "IOUsage",
+			"Timestamp": "2020-04-03T10:53:29-05:00",
+			"MetricValue": "0",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS IOUsage"
+				}
+			}
+		}, {
+			"MetricId": "MemoryUsage",
+			"Timestamp": "2020-04-03T10:53:29-05:00",
+			"MetricValue": "14",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS MemoryUsage"
+				}
+			}
+		}, {
+			"MetricId": "SystemUsage",
+			"Timestamp": "2020-04-03T10:53:29-05:00",
+			"MetricValue": "25",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS SystemUsage"
+				}
+			}
+		}, {
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:53:34-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		}, {
+			"MetricId": "IOUsage",
+			"Timestamp": "2020-04-03T10:53:34-05:00",
+			"MetricValue": "0",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS IOUsage"
+				}
+			}
+		}, {
+			"MetricId": "MemoryUsage",
+			"Timestamp": "2020-04-03T10:53:34-05:00",
+			"MetricValue": "14",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS MemoryUsage"
+				}
+			}
+		}, {
+			"MetricId": "SystemUsage",
+			"Timestamp": "2020-04-03T10:53:34-05:00",
+			"MetricValue": "25",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS SystemUsage"
+				}
+			}
+		}, {
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:53:39-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		}, {
+			"MetricId": "IOUsage",
+			"Timestamp": "2020-04-03T10:53:39-05:00",
+			"MetricValue": "0",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS IOUsage"
+				}
+			}
+		}, {
+			"MetricId": "MemoryUsage",
+			"Timestamp": "2020-04-03T10:53:39-05:00",
+			"MetricValue": "15",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS MemoryUsage"
+				}
+			}
+		}, {
+			"MetricId": "SystemUsage",
+			"Timestamp": "2020-04-03T10:53:39-05:00",
+			"MetricValue": "23",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS SystemUsage"
+				}
+			}
+		}, {
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:53:44-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		}, {
+			"MetricId": "IOUsage",
+			"Timestamp": "2020-04-03T10:53:44-05:00",
+			"MetricValue": "0",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS IOUsage"
+				}
+			}
+		}, {
+			"MetricId": "MemoryUsage",
+			"Timestamp": "2020-04-03T10:53:44-05:00",
+			"MetricValue": "15",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS MemoryUsage"
+				}
+			}
+		}, {
+			"MetricId": "SystemUsage",
+			"Timestamp": "2020-04-03T10:53:44-05:00",
+			"MetricValue": "23",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS SystemUsage"
+				}
+			}
+		}, {
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:53:49-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		}, {
+			"MetricId": "IOUsage",
+			"Timestamp": "2020-04-03T10:53:49-05:00",
+			"MetricValue": "0",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS IOUsage"
+				}
+			}
+		}, {
+			"MetricId": "MemoryUsage",
+			"Timestamp": "2020-04-03T10:53:49-05:00",
+			"MetricValue": "13",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS MemoryUsage"
+				}
+			}
+		}, {
+			"MetricId": "SystemUsage",
+			"Timestamp": "2020-04-03T10:53:49-05:00",
+			"MetricValue": "21",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS SystemUsage"
+				}
+			}
+		}, {
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:53:54-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		}, {
+			"MetricId": "IOUsage",
+			"Timestamp": "2020-04-03T10:53:54-05:00",
+			"MetricValue": "0",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS IOUsage"
+				}
+			}
+		}, {
+			"MetricId": "MemoryUsage",
+			"Timestamp": "2020-04-03T10:53:54-05:00",
+			"MetricValue": "13",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS MemoryUsage"
+				}
+			}
+		}, {
+			"MetricId": "SystemUsage",
+			"Timestamp": "2020-04-03T10:53:54-05:00",
+			"MetricValue": "21",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS SystemUsage"
+				}
+			}
+		}, {
+			"MetricId": "CPUUsage",
+			"Timestamp": "2020-04-03T10:53:59-05:00",
+			"MetricValue": "90",
+			"Oem": {
+				"Dell": {
+					"ContextID": "CUPS",
+					"Label": "CUPS CPUUsage"
+				}
+			}
+		}
+	],
+	"MetricValues@odata.count": 48
+}

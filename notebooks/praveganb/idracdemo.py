@@ -102,7 +102,7 @@ def calculate_grsf(usage, rack, metricId, reportid, scope, stream, gateway):
     stream_info = idracdata.get_stream_start_end()
     grsf = stdv = mean = count = s1= s2 = 0
     # livestream
-    read_events = idracdata.get_data_from_idrac_generator_bymetric_id(from_stream_cut=stream_info[0],
+    read_events = idracdata.get_data_from_idrac_generator_bymetric_id(from_stream_cut=stream_info[0], to_stream_cut=stream_info[1],
                                         data_id=reportid,
                                         rack_label=rack,
                                         metric_id=metricId
@@ -150,9 +150,11 @@ class IdracData(object):
         ])
         return pravega.grpc.PravegaGatewayStub(pravega_channel)
    
-    def get_metric_from_vsphere(self, from_stream_cut):
+    def get_metric_from_vsphere(self, from_stream_cut, to_stream_cut=None):
         from_stream_cut = pravega.pb.StreamCut(text=from_stream_cut)
-        read_events = self.unindexed_stream.read_events_from_stream(from_stream_cut)
+        if to_stream_cut:
+            to_stream_cut = pravega.pb.StreamCut(text=to_stream_cut)
+        read_events = self.unindexed_stream.read_events_from_stream(from_stream_cut, to_stream_cut)
         for i, event in enumerate(read_events):
             yield(dict(event))
 
@@ -220,9 +222,11 @@ class IdracData(object):
 
     
     
-    def get_data_from_idrac_generator_bymetric_id(self, from_stream_cut, data_id, rack_label, metric_id):
+    def get_data_from_idrac_generator_bymetric_id(self, from_stream_cut, data_id, rack_label, metric_id, to_stream_cut=None):
         from_stream_cut = pravega.pb.StreamCut(text=from_stream_cut)
-        read_events = self.unindexed_stream.read_events_from_stream(from_stream_cut, None)
+        if to_stream_cut:
+            to_stream_cut = pravega.pb.StreamCut(text=to_stream_cut)
+        read_events = self.unindexed_stream.read_events_from_stream(from_stream_cut, to_stream_cut)
         for i, event in enumerate(read_events):
             metric_report = dict(event)
             if metric_report.get('MetricValues') and metric_report.get('Id') == data_id and metric_report.get('RemoteAddr') in racks[rack_label]:

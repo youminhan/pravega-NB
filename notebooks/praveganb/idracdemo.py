@@ -65,14 +65,15 @@ anchorsteam = [
     '10.243.19.158'
               ]
 eaglemonk = [ 
-    '10.243.19.70',
-    '10.243.19.72', 
-    '10.243.19.74' , 
-    '10.243.19.76', 
-    '10.243.19.78', 
-    '10.243.19.80', 
-    '10.243.19.82',
-    '10.243.19.84'
+      '10.243.19.70'
+#     '10.243.19.70',
+#     '10.243.19.72', 
+#     '10.243.19.74' , 
+#     '10.243.19.76', 
+#     '10.243.19.78', 
+#     '10.243.19.80', 
+#     '10.243.19.82',
+#     '10.243.19.84'
             ]
 
 racks = dict()
@@ -130,6 +131,7 @@ class IdracData(object):
         self.gateway = gateway
         self.pravega_client = self.init_pravega_client(gateway)
         self.unindexed_stream = UnindexedStream(self.pravega_client, scope, stream)
+        self.indexed_stream = IndexedStream(self.pravega_client, scope, stream)
         
 
     def get_events(self, from_stream_cut):
@@ -138,6 +140,8 @@ class IdracData(object):
         for i, event in enumerate(read_events):
             yield (dict(event))
         
+    def get_indexed_stream(self):
+        return self.indexed_stream
 
     def get_stream_start_end(self):
         stream_info = self.unindexed_stream.get_stream_info()
@@ -158,13 +162,19 @@ class IdracData(object):
         for i, event in enumerate(read_events):
             yield(dict(event))
 
-    def get_metric_report_from_idrac(self, from_stream_cut, data_id, rack_label):
+    def get_metric_report_from_idrac(self, from_stream_cut, rack_label, data_id=None, to_stream_cut=None):
         from_stream_cut = pravega.pb.StreamCut(text=from_stream_cut)
-        read_events = self.unindexed_stream.read_events_from_stream(from_stream_cut)
+        if to_stream_cut:
+            to_stream_cut = pravega.pb.StreamCut(text=to_stream_cut)
+        read_events = self.unindexed_stream.read_events_from_stream(from_stream_cut, to_stream_cut)
         for i, event in enumerate(read_events):
             metric_report = dict(event)
-            if metric_report.get('MetricValues') and metric_report.get('Id') == data_id and metric_report.get('RemoteAddr') in racks[rack_label]:
-                return metric_report
+            if metric_report.get('MetricValues') and metric_report.get('RemoteAddr') in racks[rack_label]:
+                if data_id:
+                    if metric_report.get('Id') == data_id:
+                        yield metric_report
+                else:
+                    yield metric_report 
 
     def get_data_from_idrac(self, from_stream_cut, data_id, rack_label, metric_id, to_stream_cut=None, count_of_entries=None, interval=None):
         from_stream_cut = pravega.pb.StreamCut(text=from_stream_cut)

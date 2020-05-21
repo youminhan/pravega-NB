@@ -119,7 +119,7 @@ class UnindexedStream(StreamBase):
             print(event)
 
 class IndexedStream(UnindexedStream):
-    def __init__(self, pravega_client, scope, stream, timestamp_col='timestamp', exclude_cols=('data',)):
+    def __init__(self, pravega_client, scope, stream, timestamp_col='Timestamp', exclude_cols=('MetricValues', 'ReportSequence', 'Name', '@odata.type', '@odata.id', '@odata.context',)):
         super(IndexedStream, self).__init__(pravega_client, scope, stream)
         self.pravega_client = pravega_client
         self.scope = scope
@@ -189,7 +189,7 @@ class IndexedStream(UnindexedStream):
         index_records = list(index_records)
         if len(index_records) > 0:
             df = pd.DataFrame(index_records)
-            df[self.timestamp_col] = pd.to_datetime(df[self.timestamp_col], unit='ms', utc=True)
+            df[self.timestamp_col] = pd.to_datetime(df[self.timestamp_col], format="%Y-%m-%dT%H:%M:%S.%fZ")
             df = df.set_index([self.timestamp_col])
             self.index_df = df
         else:

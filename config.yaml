@@ -1,2 +1,54 @@
+hub:
+  extraConfig:
+    # Below changed per https://github.com/jupyter/docker-stacks/issues/1041.
+    jupyterlab: |
+      c.Spawner.default_url = "/lab"
+prePuller:
+  hook:
+    enabled: false
+
+singleuser:
+  extraEnv:
+    GRANT_SUDO: "yes"
+    NOTEBOOK_ARGS: "--allow-root"
+  uid: 0
+  cmd: start-singleuser.sh
+  cpu:
+    limit: 2.0
+    guarantee: 0.5
+  defaultUrl: "/lab"
+  image:
+    name: jupyter/minimal-notebook
+    tag: ae5f7e104dd5
+  imagePullPolicy: Always
+  memory:
+    limit: 2G
+    guarantee: 1G
+  profileList:
+
+    - display_name: "Jupyter minimal notebook"
+      default: true
+      kubespawner_override:
+        image: jupyter/minimal-notebook:ae5f7e104dd5
+        extra_resource_guarantees:
+          ephemeral-storage: "2Gi"
+
+    - display_name: "Jupyter All Spark Notebook 2020-03-17"
+      default: false
+      kubespawner_override:
+        image: jupyter/all-spark-notebook:dc9744740e12
+
+    - display_name: "Jupyter All Spark Notebook 2019-04-22"
+      default: false
+      kubespawner_override:
+        image: jupyter/all-spark-notebook:f646d2b2a3af
+
+  storage:
+    capacity: "10Gi"
+
 proxy:
-  secretToken: "f249b65a26504db3422cf5975c978af81fa0b540c721518866396c63453879c5"
+  service:
+    annotations:
+      #external-dns.alpha.kubernetes.io/hostname: "jupyterhub.examples.frightful-four.eaglemonk.intranet.nautilus-platform-dev.com"
+      #external-dns.alpha.kubernetes.io/hostname: "jupyterhub.examples.microbe.eaglemonk.intranet.nautilus-platform-dev.com"
+      external-dns.alpha.kubernetes.io/hostname: "jupyterhub.warstar.ns.sdp.hop.lab.emc.com"
